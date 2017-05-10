@@ -3,4 +3,4 @@
 package three.materials
 
 @JsName("MeshBasicMaterial")
-private external class MeshBasicMaterialProxy(params: dynamic)
+external open class MeshBasicMaterialProxy(params: dynamic)
