@@ -2,5 +2,4 @@
 
 package three.materials
 
-@JsName("MeshBasicMaterial")
-external class MeshBasicMaterial(param: dynamic)
+internal external class MeshBasicMaterial(params: dynamic)

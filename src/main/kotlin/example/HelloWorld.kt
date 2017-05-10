@@ -3,6 +3,7 @@ package example
 import three.cameras.PerspectiveCamera
 import three.geometries.BoxGeometry
 import three.materials.MeshBasicMaterial
+import three.materials.MeshBasicMaterialParam
 import three.objects.Mesh
 import three.renderers.WebGLRenderer
 import three.scenes.Scene
@@ -27,7 +28,10 @@ class HelloWorld {
 
         val geometry = BoxGeometry(1, 1, 1)
 
-        val param: dynamic = object {}
+//        val param: dynamic = object {}
+//        param.color = 0x00ff00
+
+        val param = MeshBasicMaterialParam()
         param.color = 0x00ff00
 
         val material = MeshBasicMaterial(param)
