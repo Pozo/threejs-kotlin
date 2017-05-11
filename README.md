@@ -1,52 +1,30 @@
-# puNk
+# threejs-kotlin
+three.js bindings for Kotlin with running examples
 
-## What is it?
+<p align="center"><img src="https://github.com/Pozo/threejs-kotlin/blob/master/hello-world.gif" alt="amf loader"></p>
+<p align="center"><img src="https://github.com/Pozo/threejs-kotlin/blob/master/amf-loader.gif" alt="amf loader"></p>
 
-Hiding a payload in PNG files with ~~Python~~ Java, according to Brian de Heus [article](http://blog.brian.jp/python/png/2016/07/07/file-fun-with-pyhon.html) and the [reddit](https://www.reddit.com/r/programming/comments/4rt266/hiding_a_payload_in_png_files_with_python/) link which led me there.
+## Goals and challenges
 
-## Usage
+Recently I started learn Kotlin js and based on [Nicolas article](https://blog.frankel.ch/kotlin-front-end-developers/) I've wanted to try out Kotlin tarnspiling ability.
 
-```
-git clone https://github.com/Pozo/punk && cd punk && mvn clean install
+Three.js is a very popular and interesting library and [these](https://github.com/michael-johansen/kotlin-three.js), [repos](https://github.com/ClassicThunder/Kotlin_ThreeJS) seems to be abandoned.   
 
-java -jar target/punk-1.0-SNAPSHOT.jar -e \
--s $HOME/source.png \
--i $HOME/inject.png \
--o output.png
+more details later, play with example and discover the code! :smiley_cat:
 
-```
-
-## Example
-####encode
-Let's inject the latest zipped jQuery into a PNG file.
-```
-wget -O $HOME/spaceinvaders.png http://www.adiumxtras.com/images/thumbs/space_invaders_1_17601_6150_thumb.png
-wget -O $HOME/jquery.zip https://github.com/jquery/jquery/archive/master.zip
-
-java -jar target/punk-1.0-SNAPSHOT.jar -e \
--s $HOME/spaceinvaders.png \
--i $HOME/jquery.zip \
--o invader.png
-
-#sudo apt-get install pngtools
-pngchunks invader.png 
-7z l invader.png
-
-$$ profit $$
-```
-####decode
-Let's recover jQuery from that little bastard.
-```
-java -jar target/punk-1.0-SNAPSHOT.jar -d \
--i invader.png \
--o jquery
-```
-## Banana for scale
-
-![Meetup Flyer](https://github.com/Pozo/meetup-flyer/blob/master/flyer.png "Meetup Flyer")
 ## Licensing
 
 Please see the file called LICENSE.
+
+## Links
+
+ - http://kotlinlang.org/docs/reference/js-overview.html
+ - https://kotlinlang.org/docs/reference/js-modules.html
+ - https://threejs.org/docs/
+ - http://codepen.io/anon/pen/Wjzjdo?editors=0010
+ - https://github.com/mrdoob/three.js/
+ - https://github.com/Kotlin/kotlin-frontend-plugin
+ - https://blog.frankel.ch/kotlin-front-end-developers
 
 ## Contact
 
