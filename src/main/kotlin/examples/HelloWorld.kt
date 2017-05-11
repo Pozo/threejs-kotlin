@@ -1,4 +1,4 @@
-package example
+package examples
 
 import three.cameras.PerspectiveCamera
 import three.geometries.BoxGeometry

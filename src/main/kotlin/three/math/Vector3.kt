@@ -4,9 +4,11 @@ package three.math
 
 @JsName("Vector3")
 external class Vector3 {
-    var X: Double
+    constructor(x: Double, y: Double, z: Double)
+
+    var x: Double
     var y: Double
     var z: Double
 
-    fun set(x: Int, y: Int, z: Int)
+    fun set(x: Double, y: Double, z: Double)
 }

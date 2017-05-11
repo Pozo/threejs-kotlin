@@ -3,6 +3,9 @@
 package three.lights
 
 @JsName("PointLight")
-external class PointLight(color: Int, intensity: Int, distance: Int) : Light {
+external class PointLight : Light {
+    constructor(color: Int, intensity: Double, distance: Int)
+    constructor(color: Int, intensity: Double)
+
     val shadow: LightShadow
 }

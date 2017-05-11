@@ -1,4 +1,4 @@
-package example
+package examples
 
 import three.Shading
 import three.ShadowMap
@@ -53,8 +53,8 @@ class HelloWorldShadow {
     }
 
     private fun createLight(): PointLight {
-        val light = PointLight(0xffffff, 1, 100)
-        light.position.set(0, 12, 0)
+        val light = PointLight(0xffffff, 1.0, 100)
+        light.position.set(0.0, 12.0, 0.0)
         light.castShadow = true
         light.shadow.mapSize.width = 1024
         light.shadow.mapSize.height = 1024
