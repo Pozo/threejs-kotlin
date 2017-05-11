@@ -5,8 +5,8 @@
 
 build
 # User-specific stuff:
-.idea
-.gradle
+*.idea
+**/.gradle
 
 # Mongo Explorer plugin:
 .idea/**/mongoSettings.xml

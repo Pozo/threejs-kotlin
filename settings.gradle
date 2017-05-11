@@ -1,2 +1,4 @@
 rootProject.name = 'threejs-kotlin'
+include 'examples'
+include 'threejs'
 
