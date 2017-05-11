@@ -5,7 +5,7 @@ import three.geometries.BoxGeometry
 import three.materials.basic.MeshBasicMaterial
 import three.materials.basic.MeshBasicMaterialParam
 import three.objects.Mesh
-import three.renderers.WebGLRenderer
+import three.renderers.webglrenderer.WebGLRenderer
 import three.scenes.Scene
 import kotlin.browser.document
 import kotlin.browser.window
