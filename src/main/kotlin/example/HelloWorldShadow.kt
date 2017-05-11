@@ -31,28 +31,42 @@ class HelloWorldShadow {
         renderer.shadowMap.type = ShadowMap.PCFSoftShadowMap.value
         document.body?.appendChild(renderer.domElement)
 
+        val light = createLight()
+        scene.add(light)
+
+        cube = createCube()
+        scene.add(cube)
+    }
+
+    private fun createCube(): Mesh {
+        val geometry = BoxGeometry(1, 1, 1)
+
+        val param = createPhongMaterialParam()
+        val material = MeshPhongMaterial(param)
+
+        val mesh = Mesh(geometry, material)
+        mesh.castShadow = true
+
+        return mesh
+    }
+
+    private fun createLight(): PointLight {
         val light = PointLight(0xffffff, 1, 100)
         light.position.set(0, 12, 0)
         light.castShadow = true
         light.shadow.mapSize.width = 1024
         light.shadow.mapSize.height = 1024
+        return light
+    }
 
-        scene.add(light)
-
-        val geometry = BoxGeometry(1, 1, 1)
-
+    private fun createPhongMaterialParam(): MeshPhongMaterialParam {
         val param = MeshPhongMaterialParam()
 
         param.color = 0xdddddd
         param.specular = 0x999999
         param.shininess = 15
         param.shading = Shading.FlatShading.value
-
-        val material = MeshPhongMaterial(param)
-
-        cube = Mesh(geometry, material)
-        cube.castShadow = true
-        scene.add(cube)
+        return param
     }
 
     fun render() {
