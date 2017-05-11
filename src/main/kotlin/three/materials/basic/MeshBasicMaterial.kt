@@ -1,4 +1,4 @@
-package three.materials
+package three.materials.basic
 
 class MeshBasicMaterial(params: MeshBasicMaterialParam) : MeshBasicMaterialProxy(convert(params))
 

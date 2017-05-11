@@ -1,7 +1,7 @@
 package example
 
 fun main(args: Array<String>) {
-    val helloWorld = HelloWorld()
+    val helloWorld = HelloWorldShadow()
 
     helloWorld.render()
 }
