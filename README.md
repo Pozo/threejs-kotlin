@@ -4,6 +4,13 @@ three.js bindings for Kotlin with running examples
 <p align="center"><img src="https://github.com/Pozo/threejs-kotlin/blob/master/hello-world.gif" alt="amf loader"></p>
 <p align="center"><img src="https://github.com/Pozo/threejs-kotlin/blob/master/amf-loader.gif" alt="amf loader"></p>
 
+##Usage
+
+    git clone https://github.com/Pozo/threejs-kotlin
+    cd threejs-kotlin
+    ./gradlew examples:run
+    xdg-open http://localhost:8088
+
 ## Goals and challenges
 
 Recently I started learn Kotlin js and based on [Nicolas article](https://blog.frankel.ch/kotlin-front-end-developers/) I've wanted to try out Kotlin tarnspiling ability.
