@@ -6,6 +6,13 @@ This is a Three.js bindings for Kotlin using external modifiers and based on Thr
 <p align="center"><img src="https://github.com/Pozo/threejs-kotlin/blob/master/hello-world.gif" alt="amf loader"></p>
 <p align="center"><img src="https://github.com/Pozo/threejs-kotlin/blob/master/amf-loader.gif" alt="amf loader"></p>
 
+## Usage
+
+    git clone https://github.com/Pozo/threejs-kotlin
+    cd threejs-kotlin
+    ./gradlew examples:run
+    xdg-open http://localhost:8088
+
 ## Kotlin JS and javascript modules
 
 If you would like to use any javascript library with Kotlin, you can try several ways.
@@ -30,13 +37,6 @@ There are a few existing solutions based on this method.
 
 - [ClassicThunder/Kotlin_ThreeJS](https://github.com/ClassicThunder/Kotlin_ThreeJS)
 - [michael-johansen/kotlin-three.js](https://github.com/michael-johansen/kotlin-three.js)
-
-## Usage
-
-    git clone https://github.com/Pozo/threejs-kotlin
-    cd threejs-kotlin
-    ./gradlew examples:run
-    xdg-open http://localhost:8088
 
 ##### Goals
 
