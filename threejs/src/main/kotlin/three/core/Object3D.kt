@@ -12,6 +12,8 @@ external open class Object3D {
     var rotation: Euler
     var castShadow: Boolean
     var receiveShadow: Boolean
+    var visible: Boolean
+    var children: Array<Object3D>
 
     fun lookAt(vector: Vector3)
     fun add(pointLight: Object3D)

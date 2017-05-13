@@ -15,9 +15,12 @@ external open class WebGLRendererProxy {
 
     val domElement: Node
     var shadowMap: WebGLShadowMap
+    var autoClear: Boolean
 
     fun setSize(innerWidth: Int, innerHeight: Int)
     fun render(scene: Scene, camera: Camera)
+    fun clear()
     fun setClearColor(color: Color)
     fun setPixelRatio(devicePixelRatio: Double)
+    fun setViewport(x: Int, y: Int, width: Int, height: Int)
 }

@@ -3,8 +3,11 @@
 package three.cameras
 
 @JsName("PerspectiveCamera")
-external class PerspectiveCamera(fov: Int, aspect: Int, near: Double, far: Int) : Camera {
-    var aspect: Int
+external class PerspectiveCamera(fov: Number, aspect: Number, near: Number, far: Number) : Camera {
+    var fov: Number
+    var aspect: Number
+    var near: Number
+    var far: Number
 
     fun updateProjectionMatrix()
 }

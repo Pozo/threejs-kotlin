@@ -18,7 +18,7 @@ class HelloWorld {
 
     init {
         scene = Scene()
-        camera = PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
+        camera = PerspectiveCamera(75, (window.innerWidth / window.innerHeight).toDouble(), 0.1, 1000)
         camera.position.z = 5.0
 
         renderer = WebGLRenderer()

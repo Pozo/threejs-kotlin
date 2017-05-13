@@ -1,9 +1,11 @@
 package examples
 
-fun main(args: Array<String>) {
-    val helloWorld = HelloWorldShadowWithPlane()
+import examples.camera.WebglCamera
 
-    helloWorld.render()
+fun main(args: Array<String>) {
+    val helloWorld = WebglCamera()
+
+    helloWorld.animate()
 }
 
 

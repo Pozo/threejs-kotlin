@@ -22,7 +22,7 @@ class HelloWorldShadow {
 
     init {
         scene = Scene()
-        camera = PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
+        camera = PerspectiveCamera(75, (window.innerWidth / window.innerHeight).toDouble(), 0.1, 1000)
         camera.position.z = 5.0
         camera.position.y = 2.0
 

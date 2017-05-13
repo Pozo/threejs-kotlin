@@ -22,7 +22,7 @@ class AmfLoaderExample {
     init {
         scene = Scene()
         scene.add(AmbientLight(0x999999))
-        camera = PerspectiveCamera(35, window.innerWidth / window.innerHeight, 1.0, 500)
+        camera = PerspectiveCamera(35, (window.innerWidth / window.innerHeight).toDouble(), 1.0, 500)
         // Z is up for objects intended to be 3D printed.
         camera.up.set(0.0, 0.0, 1.0)
         camera.position.set(0.0, -9.0, 6.0)

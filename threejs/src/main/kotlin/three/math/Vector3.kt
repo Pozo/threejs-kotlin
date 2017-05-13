@@ -11,4 +11,5 @@ external class Vector3 {
     var z: Double
 
     fun set(x: Double, y: Double, z: Double)
+    fun length(): Double
 }
