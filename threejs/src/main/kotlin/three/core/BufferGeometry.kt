@@ -3,5 +3,7 @@
 package three.core
 
 @JsName("BufferGeometry")
-external open class BufferGeometry
+external open class BufferGeometry {
+    fun rotateX(radians: Float)
+}
 

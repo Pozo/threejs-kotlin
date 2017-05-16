@@ -1,11 +1,11 @@
 package examples
 
-import examples.camera.WebglCamera
+import examples.interactive.voxelpainter.VoxelPainter
 
 fun main(args: Array<String>) {
-    val helloWorld = WebglCamera()
+    val helloWorld = VoxelPainter()
 
-    helloWorld.animate()
+    helloWorld.render()
 }
 
 

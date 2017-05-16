@@ -5,7 +5,7 @@ package three.math
 @JsName("Math")
 external class Math {
     companion object {
-        fun randFloatSpread(int: Int): Double
+        fun randFloatSpread(int: Float): Float
     }
 
 }

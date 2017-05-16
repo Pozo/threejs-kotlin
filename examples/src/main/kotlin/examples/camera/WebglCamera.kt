@@ -106,9 +106,9 @@ class WebglCamera {
         //
         val geometry = Geometry()
         for (i in 0..top) {
-            val x = Math.randFloatSpread(2000)
-            val y = Math.randFloatSpread(2000)
-            val z = Math.randFloatSpread(2000)
+            val x = Math.randFloatSpread(2000f)
+            val y = Math.randFloatSpread(2000f)
+            val z = Math.randFloatSpread(2000f)
             val vertex = Vector3(x, y, z)
             geometry.vertices.push(vertex)
         }

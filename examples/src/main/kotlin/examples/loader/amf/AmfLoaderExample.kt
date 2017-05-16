@@ -24,12 +24,12 @@ class AmfLoaderExample {
         scene.add(AmbientLight(0x999999))
         camera = PerspectiveCamera(35, (window.innerWidth / window.innerHeight).toDouble(), 1.0, 500)
         // Z is up for objects intended to be 3D printed.
-        camera.up.set(0.0, 0.0, 1.0)
-        camera.position.set(0.0, -9.0, 6.0)
+        camera.up.set(0f, 0f, 1f)
+        camera.position.set(0f, -9f, 6f)
         camera.add(PointLight(0xffffff, 0.8))
         scene.add(camera)
         val grid = GridHelper(50, 50, 0xffffff, 0x555555)
-        val vector3 = Vector3(1.0, 0.0, 0.0)
+        val vector3 = Vector3(1f, 0f, 0f)
         grid.rotateOnAxis(vector3, 90 * (Math.PI / 180))
         scene.add(grid)
         val options = WebGLRendererParams()
@@ -51,7 +51,7 @@ class AmfLoaderExample {
         controls.addEventListener("change", {
             render()
         })
-        controls.target.set(0.0, 1.2, 2.0)
+        controls.target.set(0f, 1f, 2f)
         controls.update()
 
         window.addEventListener("resize", { e: Event ->
