@@ -103,6 +103,7 @@ class VoxelPainter {
         val planeParams = MeshBasicMaterialParam()
         planeParams.visible = false
         plane = Mesh(geometry2, MeshBasicMaterial(planeParams))
+        plane.ad()
         scene.add(plane)
         objects.add(plane)
         // Lights
@@ -152,7 +153,7 @@ class VoxelPainter {
                         }
                         // create cube
                     } else {
-                        var voxel = Mesh(cubeGeo, cubeMaterial)
+                        val voxel = Mesh(cubeGeo, cubeMaterial)
                         voxel.position.copy(intersect.point).add(intersect.face.normal)
                         voxel.position.divideScalar(50f).floor().multiplyScalar(50f).addScalar(25f)
                         scene.add(voxel)

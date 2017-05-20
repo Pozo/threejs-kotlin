@@ -7,6 +7,9 @@ private fun convert(params: MeshBasicMaterialParam): dynamic {
 
     param.color = params.color
     param.wireframe = params.wireframe
+    param.opacity = params.opacity
+    param.transparent = params.transparent
+    param.visible = params.visible
 
     return params
 }

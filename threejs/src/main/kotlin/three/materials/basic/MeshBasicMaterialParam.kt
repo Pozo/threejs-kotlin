@@ -5,7 +5,7 @@ class MeshBasicMaterialParam {
     var wireframe: Boolean = false
     var opacity: Double = 0.0
     var transparent: Boolean = false
-    var visible: Boolean = false
+    var visible: Boolean = true
 
 }
 

@@ -7,6 +7,8 @@ private fun convert(params: LineBasicMaterialParam): dynamic {
 
     param.color = params.color
     param.wireframe = params.wireframe
+    param.opacity = params.opacity
+    param.transparent = params.transparent
 
     return params
 }
