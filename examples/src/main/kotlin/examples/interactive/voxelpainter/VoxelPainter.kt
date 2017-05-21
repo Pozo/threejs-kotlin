@@ -49,18 +49,23 @@ class VoxelPainter {
     init {
         container = document.createElement("div")
         document.body?.appendChild(container)
-        val info = document.createElement("div")
+//        val info = document.createElement("div")
 // TODO       info.style.position = "absolute"
 // TODO        info.style.top = "10px"
 // TODO        info.style.width = "100%"
 // TODO        info.style.textAlign = "center"
 //        info.innerHTML = "<a href="http://threejs.org" target="_blank">three.js</a> - voxel painter - webgl<br><strong>click</strong>: add voxel, <strong>shift + click</strong>: remove voxel"
-        container.appendChild(info)
-        camera = PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 10000)
+//        container.appendChild(info)
+        camera = PerspectiveCamera(45, window.innerWidth.toFloat() / window.innerHeight.toFloat(), 1, 10000)
         camera.position.set(500f, 800f, 1300f)
-        camera.lookAt(Vector3(0f, 0f, 0f))
+        camera.lookAt(Vector3())
+
         scene = Scene()
+
+
         // roll-over helpers
+
+
         rollOverGeo = BoxGeometry(50, 50, 50)
         val meshParam = MeshBasicMaterialParam()
         meshParam.color = 0xff0000
@@ -69,7 +74,11 @@ class VoxelPainter {
         rollOverMaterial = MeshBasicMaterial(meshParam)
         rollOverMesh = Mesh(rollOverGeo, rollOverMaterial)
         scene.add(rollOverMesh)
+
+
         // cubes
+
+
         cubeGeo = BoxGeometry(50, 50, 50)
         val textureLoader = TextureLoader()
         val lambertMaterialParams = MeshLambertMaterialParam()
@@ -77,7 +86,11 @@ class VoxelPainter {
         lambertMaterialParams.map = textureLoader.load("square-outline-textured.png")
 
         cubeMaterial = MeshLambertMaterial(lambertMaterialParams)
+
+
         // grid
+
+
         val size = 500
         val step = 50
         val geometry = Geometry()
@@ -85,6 +98,7 @@ class VoxelPainter {
         for (i in -size..size step step) {
             geometry.vertices.push(Vector3(-size.toFloat(), 0f, i.toFloat()))
             geometry.vertices.push(Vector3(size.toFloat(), 0f, i.toFloat()))
+
             geometry.vertices.push(Vector3(i.toFloat(), 0f, -size.toFloat()))
             geometry.vertices.push(Vector3(i.toFloat(), 0f, size.toFloat()))
         }
@@ -95,23 +109,33 @@ class VoxelPainter {
         val material = LineBasicMaterial(basicMaterialParams)
         val line = LineSegments(geometry, material)
         scene.add(line)
+
+
         //
+
+
         raycaster = Raycaster()
         mouse = Vector2()
         val geometry2 = PlaneBufferGeometry(1000f, 1000f)
-        geometry2.rotateX((-kotlin.js.Math.PI / 2).toFloat())
+        geometry2.rotateX(-(kotlin.js.Math.PI / 2).toFloat())
         val planeParams = MeshBasicMaterialParam()
         planeParams.visible = false
         plane = Mesh(geometry2, MeshBasicMaterial(planeParams))
-        plane.ad()
         scene.add(plane)
+
         objects.add(plane)
+
+
         // Lights
+
+
         val ambientLight = AmbientLight(0x606060)
         scene.add(ambientLight)
-        val directionalLight = DirectionalLight(0xffffff, 0.5f)
+
+        val directionalLight = DirectionalLight(0xffffff)
         directionalLight.position.set(1f, 0.75f, 0.5f).normalize()
         scene.add(directionalLight)
+
         val params = WebGLRendererParams()
         params.antialias = true
         renderer = WebGLRenderer(params)
@@ -122,12 +146,16 @@ class VoxelPainter {
 
         document.addEventListener("mousemove", { event: Event ->
             if (event is MouseEvent) {
-                println("mousemove")
                 event.preventDefault()
-                mouse.set(((event.clientX / window.innerWidth) * 2 - 1).toFloat(), (-(event.clientY / window.innerHeight) * 2 + 1).toFloat())
+
+                mouse.set(
+                        ((event.clientX.toFloat() / window.innerWidth.toFloat()) * 2) - 1,
+                        -((event.clientY.toFloat() / window.innerHeight.toFloat()) * 2) + 1
+                )
                 raycaster.setFromCamera(mouse, camera)
                 val intersects = raycaster.intersectObjects(objects.toTypedArray())
-                if (intersects.size > 0) {
+
+                if (intersects.isNotEmpty()) {
                     val intersect = intersects.get(0)
                     rollOverMesh.position.copy(intersect.point).add(intersect.face.normal)
                     rollOverMesh.position.divideScalar(50f).floor().multiplyScalar(50f).addScalar(25f)
@@ -139,10 +167,14 @@ class VoxelPainter {
         document.addEventListener("mousedown", { event: Event ->
             if (event is MouseEvent) {
                 event.preventDefault()
-                mouse.set(((event.clientX / window.innerWidth) * 2 - 1).toFloat(), (-(event.clientY / window.innerHeight) * 2 + 1).toFloat())
+                mouse.set(
+                        ((event.clientX.toFloat() / window.innerWidth.toFloat()) * 2) - 1,
+                        -((event.clientY.toFloat() / window.innerHeight.toFloat()) * 2) + 1
+                )
+
                 raycaster.setFromCamera(mouse, camera)
                 val intersects = raycaster.intersectObjects(objects.toTypedArray())
-                if (intersects.size > 0) {
+                if (intersects.isNotEmpty()) {
                     val intersect = intersects.get(0)
                     // delete cube
                     if (isShiftDown) {
@@ -181,10 +213,12 @@ class VoxelPainter {
         }, false)
         //
         window.addEventListener("resize", { event: Event ->
-            camera.aspect = window.innerWidth / window.innerHeight
+            camera.aspect = window.innerWidth.toFloat() / window.innerHeight.toFloat()
             camera.updateProjectionMatrix()
             renderer.setSize(window.innerWidth, window.innerHeight)
+            render()
         }, false)
+
         render()
     }
 

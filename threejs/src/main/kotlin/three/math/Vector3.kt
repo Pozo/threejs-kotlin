@@ -4,6 +4,7 @@ package three.math
 
 @JsName("Vector3")
 external class Vector3 {
+    constructor()
     constructor(x: Float, y: Float, z: Float)
 
     var x: Double
