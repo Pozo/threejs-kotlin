@@ -1,9 +1,9 @@
 package examples
 
-import examples.interactive.voxelpainter.VoxelPainter
+import examples.interactive.voxelpainter.Board
 
 fun main(args: Array<String>) {
-    val helloWorld = VoxelPainter()
+    val helloWorld = Board()
 
     helloWorld.render()
 }

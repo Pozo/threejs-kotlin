@@ -30,7 +30,7 @@ class AmfLoaderExample {
         scene.add(camera)
         val grid = GridHelper(50, 50, 0xffffff, 0x555555)
         val vector3 = Vector3(1f, 0f, 0f)
-        grid.rotateOnAxis(vector3, 90 * (Math.PI / 180))
+        grid.rotateOnAxis(vector3, (90 * (Math.PI / 180).toFloat()))
         scene.add(grid)
         val options = WebGLRendererParams()
         options.antialias = true

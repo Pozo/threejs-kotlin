@@ -17,6 +17,10 @@ external open class Object3D {
 
     fun lookAt(vector: Vector3)
     fun add(pointLight: Object3D)
-    fun rotateOnAxis(axis: Vector3, angle: Double)
+    fun rotateOnAxis(axis: Vector3, angle: Float)
     fun remove(obj3ct: Object3D)
+
+    fun translateX(distance: Float)
+    fun translateY(distance: Float)
+    fun translateZ(distance: Float)
 }
