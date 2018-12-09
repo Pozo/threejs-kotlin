@@ -6,7 +6,7 @@ import three.math.Euler
 import three.math.Vector3
 
 @JsName("Object3D")
-external open class Object3D {
+open external class Object3D {
     var position: Vector3
     var up: Vector3
     var rotation: Euler

@@ -9,7 +9,7 @@ import three.renderers.webgl.WebGLShadowMap
 import three.scenes.Scene
 
 @JsName("WebGLRenderer")
-external open class WebGLRendererProxy {
+open external class WebGLRendererProxy {
     protected constructor()
     protected constructor(params: dynamic)
 

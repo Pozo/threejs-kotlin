@@ -3,7 +3,7 @@
 package three.math
 
 @JsName("Euler")
-external open class Euler {
+open external class Euler {
     var x: Double
     var y: Double
     var z: Double

@@ -7,5 +7,5 @@ import three.core.Object3D
 import three.materials.Material
 
 @JsName("Line")
-external open class Line(geometry: Geometry, material: Material) : Object3D
+open external class Line(geometry: Geometry, material: Material) : Object3D
 

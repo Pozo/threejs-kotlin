@@ -8,7 +8,7 @@ import three.math.Vector3
 import three.objects.Mesh
 
 @JsName("Raycaster")
-external open class Raycaster {
+open external class Raycaster {
     constructor(origin: Vector3, direction: Vector3, near: Float, far: Float)
     constructor(origin: Vector3, direction: Vector3, near: Float)
     constructor(origin: Vector3, direction: Vector3)

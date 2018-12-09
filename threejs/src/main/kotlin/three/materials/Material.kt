@@ -3,4 +3,4 @@
 package three.materials
 
 @JsName("Material")
-external open class Material
+open external class Material

@@ -6,4 +6,4 @@ import three.core.Geometry
 import three.materials.Material
 
 @JsName("LineSegments")
-external open class LineSegments(geometry: Geometry, material: Material) : Line
+open external class LineSegments(geometry: Geometry, material: Material) : Line
