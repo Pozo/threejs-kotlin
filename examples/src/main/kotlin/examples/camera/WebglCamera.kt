@@ -23,6 +23,9 @@ import three.scenes.Scene
 import kotlin.browser.document
 import kotlin.browser.window
 import kotlin.js.Date
+import kotlin.math.PI
+import kotlin.math.cos
+import kotlin.math.sin
 
 class WebglCamera {
     var SCREEN_WIDTH = window.innerWidth
@@ -67,8 +70,8 @@ class WebglCamera {
         activeHelper = cameraPerspectiveHelper
         // counteract different front orientation of cameras vs rig
 
-        cameraOrtho.rotation.y = kotlin.js.Math.PI // TODO
-        cameraPerspective.rotation.y = kotlin.js.Math.PI // TODO
+        cameraOrtho.rotation.y = PI // TODO
+        cameraPerspective.rotation.y = PI // TODO
         cameraRig = Group()
         cameraRig.add(cameraPerspective)
         cameraRig.add(cameraOrtho)
@@ -173,13 +176,13 @@ class WebglCamera {
 
     fun render() {
         val r = Date().getTime() * 0.0005
-        mesh.position.x = 700 * kotlin.js.Math.cos(r)
-        mesh.position.z = 700 * kotlin.js.Math.sin(r)
-        mesh.position.y = 700 * kotlin.js.Math.sin(r)
-        mesh.children.get(0).position.x = 70 * kotlin.js.Math.cos(2 * r)
-        mesh.children.get(0).position.z = 70 * kotlin.js.Math.sin(r)
+        mesh.position.x = 700 * cos(r)
+        mesh.position.z = 700 * sin(r)
+        mesh.position.y = 700 * sin(r)
+        mesh.children.get(0).position.x = 70 * cos(2 * r)
+        mesh.children.get(0).position.z = 70 * sin(r)
         if (activeCamera === cameraPerspective) {
-            cameraPerspective.fov = 35 + 30 * kotlin.js.Math.sin(0.5 * r)
+            cameraPerspective.fov = 35 + 30 * sin(0.5 * r)
             cameraPerspective.far = mesh.position.length()
             cameraPerspective.updateProjectionMatrix()
             cameraPerspectiveHelper.update()

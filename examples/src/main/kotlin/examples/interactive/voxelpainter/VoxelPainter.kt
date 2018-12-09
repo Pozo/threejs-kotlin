@@ -29,6 +29,7 @@ import three.renderers.webglrenderer.WebGLRendererParams
 import three.scenes.Scene
 import kotlin.browser.document
 import kotlin.browser.window
+import kotlin.math.PI
 
 class VoxelPainter {
     var rollOverGeo: BoxGeometry
@@ -117,7 +118,7 @@ class VoxelPainter {
         raycaster = Raycaster()
         mouse = Vector2()
         val geometry2 = PlaneBufferGeometry(1000f, 1000f)
-        geometry2.rotateX(-(kotlin.js.Math.PI / 2).toFloat())
+        geometry2.rotateX(-(PI / 2).toFloat())
         val planeParams = MeshBasicMaterialParam()
         planeParams.visible = false
         plane = Mesh(geometry2, MeshBasicMaterial(planeParams))

@@ -5,6 +5,8 @@ import org.w3c.dom.events.Event
 import org.w3c.dom.events.KeyboardEvent
 import org.w3c.dom.events.WheelEvent
 import three.cameras.PerspectiveCamera
+import kotlin.math.PI
+import kotlin.math.cos
 
 // based on https://github.com/sasoh/VillagePrototype/blob/master/js/rtsCameraControl.js
 class RTSCameraControl(val camera: PerspectiveCamera, val domElement: Node) {
@@ -71,12 +73,12 @@ class RTSCameraControl(val camera: PerspectiveCamera, val domElement: Node) {
         val factor: Float = camera.fov.toFloat() / maxFov
 
         if (this.moveForward) {
-            this.camera.translateZ(-this.moveSpeed * kotlin.js.Math.cos(this.camera.rotation.x).toFloat() * factor)
-            this.camera.translateY(-this.moveSpeed * kotlin.js.Math.cos(kotlin.js.Math.PI / 2 - this.camera.rotation.x).toFloat() * factor)
+            this.camera.translateZ(-this.moveSpeed * cos(this.camera.rotation.x).toFloat() * factor)
+            this.camera.translateY(-this.moveSpeed * cos(PI / 2 - this.camera.rotation.x).toFloat() * factor)
         }
         if (this.moveBackward) {
-            this.camera.translateZ(this.moveSpeed * kotlin.js.Math.cos(this.camera.rotation.x).toFloat() * factor);
-            this.camera.translateY(this.moveSpeed * kotlin.js.Math.cos(kotlin.js.Math.PI / 2 - this.camera.rotation.x).toFloat() * factor)
+            this.camera.translateZ(this.moveSpeed * cos(this.camera.rotation.x).toFloat() * factor);
+            this.camera.translateY(this.moveSpeed * cos(PI / 2 - this.camera.rotation.x).toFloat() * factor)
         }
         if (this.moveLeft) {
             this.camera.translateX(-this.moveSpeed * factor)

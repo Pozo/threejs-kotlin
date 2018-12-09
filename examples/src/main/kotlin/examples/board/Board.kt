@@ -33,7 +33,7 @@ import three.renderers.webglrenderer.WebGLRendererParams
 import three.scenes.Scene
 import kotlin.browser.document
 import kotlin.browser.window
-import kotlin.js.Math
+import kotlin.math.PI
 
 class Board {
     var container: Element
@@ -246,7 +246,7 @@ class Board {
 
     private fun createPlane(): Mesh {
         val planeGeomerty = PlaneBufferGeometry(1000f, 1000f)
-        planeGeomerty.rotateX(-(Math.PI / 2).toFloat())
+        planeGeomerty.rotateX(-(PI / 2).toFloat())
 
         val planeParams = MeshLambertMaterialParam()
         planeParams.map = textureLoader.load("grass.png")

@@ -14,7 +14,7 @@ import three.renderers.webglrenderer.WebGLRendererParams
 import three.scenes.Scene
 import kotlin.browser.document
 import kotlin.browser.window
-import kotlin.js.Math
+import kotlin.math.PI
 
 class HelloWorldShadowWithPlane {
     val renderer: WebGLRenderer
@@ -45,7 +45,7 @@ class HelloWorldShadowWithPlane {
         scene.add(plane)
 
         plane.position.y = -2.0
-        plane.rotation.x = -Math.PI / 2
+        plane.rotation.x = - PI / 2
 
         camera.position.z = 5.0
         camera.position.y = 2.0
