@@ -6,6 +6,7 @@ package three.lights
 external class DirectionalLight : Light {
     constructor(color: Int, intensity: Float)
     constructor(color: Int)
+    constructor()
 
     val shadow: DirectionalLightShadow
 }
