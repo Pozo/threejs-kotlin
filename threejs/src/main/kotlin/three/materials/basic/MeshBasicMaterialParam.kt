@@ -1,6 +1,8 @@
 package three.materials.basic
 
-class MeshBasicMaterialParam {
+import three.textures.Texture
+
+open class MeshBasicMaterialParam {
     var asDynamic: dynamic
 
     // XXX here we have an issue with dynamic initialisation
@@ -30,6 +32,13 @@ class MeshBasicMaterialParam {
         set(value) {
             asDynamic.visible = value
         }
-
+    var map: Texture? = null
+        set(value) {
+            asDynamic.map = value
+        }
+    var flatShading: Boolean = false
+        set(value) {
+            asDynamic.flatShading = value
+        }
 }
 

@@ -3,4 +3,4 @@
 package three.textures
 
 @JsName("Texture")
-external class Texture
+open external class Texture

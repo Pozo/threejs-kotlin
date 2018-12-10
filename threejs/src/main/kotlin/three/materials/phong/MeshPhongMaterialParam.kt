@@ -1,9 +1,9 @@
 package three.materials.phong
 
-import three.textures.Texture
+import three.materials.MaterialColors
+import three.materials.basic.MeshBasicMaterialParam
 
-class MeshPhongMaterialParam {
-    var asDynamic: dynamic
+class MeshPhongMaterialParam : MeshBasicMaterialParam {
 
     // XXX here we have an issue with dynamic initialisation
     constructor() : this(js("new Object()"))
@@ -12,10 +12,6 @@ class MeshPhongMaterialParam {
         this.asDynamic = asDynamic
     }
 
-    var color: Int = 0
-        set(value) {
-            asDynamic.color = value
-        }
     var specular: Int = 0
         set(value) {
             asDynamic.specular = value
@@ -28,9 +24,9 @@ class MeshPhongMaterialParam {
         set(value) {
             asDynamic.shading = value
         }
-    var map: Texture = Texture()
+    var vertexColors: MaterialColors = MaterialColors.NoColors
         set(value) {
-            asDynamic.map = value
+            asDynamic.vertexColors = value.value
         }
 }
 
