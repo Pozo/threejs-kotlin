@@ -26,6 +26,7 @@ repositories {
 
 dependencies {
     compile project(":threejs")
+    compile project(":threejs-dsl")
 }
 
 kotlinFrontend {
