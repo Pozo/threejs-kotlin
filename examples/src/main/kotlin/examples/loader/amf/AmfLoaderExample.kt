@@ -41,11 +41,11 @@ class AmfLoaderExample {
         document.body?.appendChild(renderer.domElement)
         val loader = AMFLoader()
 
-        loader.load("https://rawgit.com/mrdoob/three.js/master/examples/models/amf/rook.amf", { object3D ->
+        loader.load("https://rawgit.com/mrdoob/three.js/master/examples/models/amf/rook.amf") { object3D ->
             println(object3D)
             scene.add(object3D)
             render()
-        })
+        }
 //
         val controls = OrbitControls(camera, renderer.domElement)
         controls.addEventListener("change", {

@@ -1,7 +1,7 @@
 # threejs-kotlin
-Recently I started learn Kotlin js and based on [Nicolas article](https://blog.frankel.ch/kotlin-front-end-developers/) I've wanted to try out Kotlin tarnspiling ability. 
+Recently I started learn Kotlin js and based on [Nicolas article](https://blog.frankel.ch/kotlin-front-end-developers/) I've wanted to try out Kotlin transpiling ability.
 
-This is a Three.js bindings for Kotlin using external modifiers and based on Three.js [r84](https://github.com/mrdoob/three.js/releases/tag/r84) with wroking examples.
+This is a Three.js bindings for Kotlin using external modifiers and based on Three.js [r84](https://github.com/mrdoob/three.js/releases/tag/r84) with working examples.
 
 <p align="center"><img src="https://github.com/Pozo/threejs-kotlin/blob/master/hello-world.gif" alt="amf loader"></p>
 <p align="center"><img src="https://github.com/Pozo/threejs-kotlin/blob/master/amf-loader.gif" alt="amf loader"></p>

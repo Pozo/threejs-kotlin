@@ -213,7 +213,7 @@ class VoxelPainter {
 
         }, false)
         //
-        window.addEventListener("resize", { event: Event ->
+        window.addEventListener("resize", {
             camera.aspect = window.innerWidth.toFloat() / window.innerHeight.toFloat()
             camera.updateProjectionMatrix()
             renderer.setSize(window.innerWidth, window.innerHeight)

@@ -6,7 +6,6 @@ import org.w3c.dom.Element
 import org.w3c.dom.HTMLCanvasElement
 import org.w3c.dom.events.Event
 import org.w3c.dom.events.MouseEvent
-import three.Shading
 import three.cameras.Camera
 import three.cameras.PerspectiveCamera
 import three.core.BufferAttribute

@@ -133,7 +133,7 @@ class WebglCamera {
         //TODO val stats = Stats()
         //TODO container.appendChild(stats.dom)
 
-        window.addEventListener("resize", { e: Event ->
+        window.addEventListener("resize", {
             SCREEN_WIDTH = window.innerWidth
             SCREEN_HEIGHT = window.innerHeight
             aspect = SCREEN_WIDTH / SCREEN_HEIGHT
@@ -167,9 +167,9 @@ class WebglCamera {
     }
 
     fun animate() {
-        window.requestAnimationFrame({
+        window.requestAnimationFrame {
             animate()
-        })
+        }
         render()
         // TODO stats.update()
     }

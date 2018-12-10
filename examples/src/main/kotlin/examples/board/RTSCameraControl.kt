@@ -77,7 +77,7 @@ class RTSCameraControl(val camera: PerspectiveCamera, val domElement: Node) {
             this.camera.translateY(-this.moveSpeed * cos(PI / 2 - this.camera.rotation.x).toFloat() * factor)
         }
         if (this.moveBackward) {
-            this.camera.translateZ(this.moveSpeed * cos(this.camera.rotation.x).toFloat() * factor);
+            this.camera.translateZ(this.moveSpeed * cos(this.camera.rotation.x).toFloat() * factor)
             this.camera.translateY(this.moveSpeed * cos(PI / 2 - this.camera.rotation.x).toFloat() * factor)
         }
         if (this.moveLeft) {

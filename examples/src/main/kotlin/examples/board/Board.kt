@@ -180,7 +180,7 @@ class Board {
 
         }, false)
         //
-        window.addEventListener("resize", { event: Event ->
+        window.addEventListener("resize", {
             camera.aspect = window.innerWidth.toFloat() / window.innerHeight.toFloat()
             camera.updateProjectionMatrix()
             renderer.setSize(window.innerWidth, window.innerHeight)
@@ -284,9 +284,9 @@ class Board {
     fun render() {
         renderer.render(scene, camera)
         control.update(clock.getDelta())
-        window.requestAnimationFrame({
+        window.requestAnimationFrame {
             render()
-        })
+        }
     }
 }
 
